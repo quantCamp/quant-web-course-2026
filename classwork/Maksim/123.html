@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Академия Minecraft | Обучение игре</title>
+    <style>
+        /* Общие стили в стиле Minecraft */
+        :root {
+            --bg-color: #1a1a1a;
+            --panel-color: #2c2c2c;
+            --text-color: #f5f5f5;
+            --mc-green: #52a535;
+            --mc-green-hover: #3b7a24;
+            --accent-color: #ffaa00;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Шапка и Навигация */
+        header {
+            background-color: #111;
+            border-bottom: 4px solid var(--mc-green);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--accent-color);
+            text-shadow: 2px 2px #000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links button {
+            background: var(--panel-color);
+            color: var(--text-color);
+            border: 2px solid #555;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links button:hover, .nav-links button.active {
+            background-color: var(--mc-green);
+            border-color: #fff;
+            color: #fff;
+        }
+
+        /* Основной контент */
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            display: none; /* Скрываем все секции по умолчанию */
+            background-color: var(--panel-color);
+            border: 3px solid #000;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .section.active {
+            display: block; /* Показываем только активную секцию */
+        }
+
+        /* Стиль текста */
+        h1 {
+            color: var(--accent-color);
+            margin-top: 0;
+            text-shadow: 2px 2px #000;
+        }
+
+        h2 {
+            color: #52a535;
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--accent-color);
+        }
+
+        /* Кнопка действия */
+        .btn-start {
+            display: inline-block;
+            background-color: var(--mc-green);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #fff;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .btn-start:hover {
+            background-color: var(--mc-green-hover);
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">⛏️ Академия MC</div>
+            <ul class="nav-links">
+                <li><button onclick="showSection('home')" id="btn-home" class="active">Главная</button></li>
+                <li><button onclick="showSection('survival')" id="btn-survival">Выживание</button></li>
+                <li><button onclick="showSection('building')" id="btn-building">Строительство</button></li>
+                <li><button onclick="showSection('redstone')" id="btn-redstone">Редстоун</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Главная страница -->
+        <section id="home" class="section active">
+            <h1>Академия Minecraft: От Новичка до Профессионала</h1>
+            <p>Добро пожаловать на обучающий портал по игре Minecraft! Здесь вы найдете пошаговые руководства, которые помогут вам освоить мир блоков, выжить в первую ночь и построить автоматические фермы.</p>
+
+            <h2>Чему вы научитесь:</h2>
+            <ul>
+                <li>📦 Основам выживания и добычи ресурсов</li>
+                <li>⚔️ Боевой системе и защите от монстров</li>
+                <li>🏡 Строительству красивых домов и баз</li>
+                <li>⚙️ Созданию механизмов из редстоуна</li>
+            </ul>
+
+            <p>Готовы начать свое приключение?</p>
+            <button class="btn-start" onclick="showSection('survival')">Начать обучение!</button>
+        </section>
+
+        <!-- Выживание -->
+        <section id="survival" class="section">
+            <h1>Выживание: Первая ночь</h1>
+            <p>Первый день в Minecraft — самый важный. Ваша главная задача — подготовиться к наступлению темноты, когда появляются враждебные мобы.</p>
+
+            <h2>План действий на первый день:</h2>
+            <ol>
+                <li><strong>Добудьте дерево.</strong> Разбейте рукой 4-5 блоков дерева и создайте доски.</li>
+                <li><strong>Сделайте верстак.</strong> Заполните сетку крафта 2х2 досками. Это ваш главный инструмент.</li>
+                <li><strong>Создайте инструменты.</strong> Сделайте деревянную кирку, добудьте камень и сразу обновите инструменты до каменных.</li>
+                <li><strong>Найдите овец.</strong> Вам нужно 3 блока шерсти одинакового цвета для создания кровати. Кровать позволяет пропустить опасную ночь.</li>
+                <li><strong>Постройте убежище.</strong> Выкопайте небольшую пещеру или постройте коробку из земли/досок, чтобы переждать ночь.</li>
+            </ol>
+        </section>
+
+        <!-- Строительство -->
+        <section id="building" class="section">
+            <h1>Основы красивого строительства</h1>
+            <p>Коробки из булыжника остались в прошлом. Чтобы ваше жилье выглядело профессионально, следуйте трем золотым правилам архитектуры в Minecraft.</p>
+
+            <h2>3 правила хорошей постройки:</h2>
+            <ul>
+                <li><strong>Глубина фасада.</strong> Никогда не делайте стены плоскими. Выдвигайте несущие балки (бревна) на один блок вперед относительно стен.</li>
+                <li><strong>Палитра блоков.</strong> Используйте блоки, которые сочетаются друг с другом. Отличная базовая комбинация: дубовые бревна, доски и булыжник.</li>
+                <li><strong>Детализация.</strong> Добавляйте перевернутые ступени под крышу, используйте люки вместо ставен и украшайте дом листвой (кустами).</li>
+            </ul>
+        </section>
+
+        <!-- Редстоун -->
+        <section id="redstone" class="section">
+            <h1>Введение в Редстоун (Красный камень)</h1>
+            <p>Редстоун — это аналог электричества в мире Minecraft. С его помощью можно автоматизировать рутинные процессы.</p>
+
+            <h2>Базовые элементы:</h2>
+            <ul>
+                <li><strong>Источник сигнала:</strong> Рычаги, кнопки, нажимные плиты и редстоун-факелы.</li>
+                <li><strong>Проводник:</strong> Редстоун-пыль, которая передает сигнал на расстояние до 15 блоков.</li>
+                <li><strong>Повторитель (Репитер):</strong> Продлевает сигнал еще на 15 блоков и может задерживать его во времени.</li>
+                <li><strong>Потребитель:</strong> Поршни (двигают блоки), раздатчики (выбрасывают предметы), лампы и железные двери.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Академия Minecraft. Создано для будущих крафтеров.</p>
+    </footer>
+
+    <!-- Скрипт для переключения вкладок -->
+    <script>
+        function showSection(sectionId) {
+            // Скрываем все секции
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Убираем активный класс у всех кнопок
+            const buttons = document.querySelectorAll('.nav-links button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Показываем нужную секцию
+            document.getElementById(sectionId).classList.add('active');
+
+            // Подсвечиваем нужную кнопку в меню
+            document.getElementById('btn-' + sectionId).classList.add('active');
+
+            // Прокрутка наверх при переключении
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
