@@ -1,2 +1,0 @@
-print("mouse")
-print("Раушан")
