@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six-Seven</title>
+    <link rel="stylesheet" href="4еJIoBeK%20Style.css">
+    <style>
+        /* Базовые стили для улучшения внешнего вида */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            background: linear-gradient(90deg, #f7971e, #ffd200);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(255, 210, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(0, 206, 201, 0.4);
+        }
+
+        .btn-yes:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 206, 201, 0.6);
+        }
+
+        .btn-no {
+            background: linear-gradient(135deg, #e17055, #d63031);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(214, 48, 49, 0.4);
+        }
+
+        .btn-no:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(214, 48, 49, 0.6);
+        }
+
+        /* Эффект "пульсации" для кнопок */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            transform: scale(0.5);
+        }
+
+        .btn:hover::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+                text-align: center;
+            }
+
+            .btn {
+                padding: 14px 35px;
+                font-size: 1.4rem;
+            }
+
+            .button-group {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 12px 28px;
+                font-size: 1.2rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Изображение с улучшенной обёрткой -->
+    <img
+        src="672.jpg"
+        alt="67"
+        class="hero-image"
+        loading="lazy"
+    >
+
+    <h1>Ты крутой?</h1>
+
+    <div class="button-group">
+        <a href="https://www.youtube.com/watch?v=yo5CILhgvT4" class="btn btn-yes">6</a>
+        <a href="https://www.youtube.com/watch?v=yo5CILhgvT4" class="btn btn-no">7</a>
+    </div>
+</body>
+</html>
