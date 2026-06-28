@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Наши направления</h2>
+<p>123123123</p>
+<ul>
+    <li>Физико-математическое</li>
+    <li>Информационные технологии</li>
+    <li>Химико-биологическое</li>
+</ul>
+
+<img src="image.jpg" alt="Cat">
+<a href="https://github.com/IMART0/quant-web-course-2026">Наш GitHub</a>
+
+
+<a href="http://github.com/IMART0/quant-web-course-2026" target="_blank">
+    <img src="image.jpg" alt="Cat">
+</a>
+
+<section id="news">
+    <h2>Новости лагеря</h2>
+    <article>
+        <h3>Открытие IT-смены!</h3>
+        <p>Сегодня стартовала смена...</p>
+    </article>
+</section>
+
+<form>
+    <label for="username">Логин:</label>
+    <input id="username" type="text">
+    <label for="date">Дата:</label>
+    <input id="date" type="date" min="2026-06-01" max="2026-08-31">
+</form>
+<p>Выберите направление:</p>
+<input type="radio" id="dir-it" name="direction" value="it">
+<label for="dir-it">IT-технологии</label>
+<input type="radio" id="dir-ph" name="direction" value="physics">
+<label for="dir-ph">Физика</label>
+<input type="checkbox" id="rules" name="agree" required>
+<label for="rules">Согласен с правилами</label>
+
+<label for="camp-shift">Смена:</label>
+<select id="camp-shift" name="shift">
+    <option value="1">Июньская научная</option>
+    <option value="2">Июльская IT-смена</option>
+    <option value="3">Августовская хим-био</option>
+</select>
+
+<form action="/apply/" method="POST">
+  <p>
+    <label for="fio">ФИО:</label>
+    <input id="fio" type="text" name="student_fio" required>
+  </p>
+  <p>
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="student_email" required>
+  </p>
+  <p>
+    <label for="shift">Смена:</label>
+    <select id="shift" name="selected_shift">
+      <option value="it">IT-смена</option>
+      <option value="fm">Физ-мат смена</option>
+    </select>
+  </p>
+  <button type="submit">Зарегистрироваться</button>
+</form>
+</body>
+</html>

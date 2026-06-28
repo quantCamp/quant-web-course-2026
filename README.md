@@ -78,6 +78,7 @@ feature/arsen
 ├── presentations/        # HTML-презентации
 ├── examples/             # Примеры кода
 ├── tasks/                # Практические задания
+├── homework/ishkhan      # Домашние задания
 ├── requirements.txt
 ├── README.md
 └── .gitignore
