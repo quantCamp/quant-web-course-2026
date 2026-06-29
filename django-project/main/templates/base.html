@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Квант</title>
+</head>
+<body>
+    <h1>Добро пожаловать на сайт Кванта</h1>
+    <h2>Наши курсы</h2>
+
+    <ul>
+
+        {% for slug, description in courses %}
+            <li><a href="courses/{{ slug }}/">{{ slug }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
