@@ -1,0 +1,13 @@
+camp_name = "kvant"
+
+{{ camp_name|upper }} => KVANT
+
+
+teacher = {
+    "name": "name",
+    "age": "50"
+}
+
+{{ teacher.bio|default:"Биографии нет" }}
+
+{{ teacher.rating|default:"Рейтинга нет"|floatformat:1 }}
