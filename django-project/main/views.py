@@ -10,25 +10,36 @@ COURSES = {
     "Tatar_language": "учим татарский"
 }
 
-TEACHER = {
-    'name': 'raushan'
-}
+TEACHER = [
+    {
+        'name': 'raushan',
+        'age': 20,
+        'course': 'web'
+    },
+    {
+        'name': 'ishkhan',
+        'age': 20,
+        'course': 'web'
+    }
+]
+
 
 def main_page(request):
-
-    return render(request, './main_page.html', context={
+    return render(request, './index.html', context={
         'courses': list(COURSES.items()),
-        'teacher': TEACHER
+        'teachers': TEACHER
     })
 
+
 def course_description(request, course_name):
-
     if course_name not in COURSES:
-        return HttpResponse(
-            f"курса {course_name} нет",
-            status=404
-        )
+        raise Http404(f"Курса {course_name} нет")
 
-    return HttpResponse(
-        COURSES[course_name]
-    )
+    return render(request, './course.html', context={"course": {'name': course_name, 'description': COURSES[course_name]}})
+
+def teacher_description(request, teacher_name):
+    for teacher in TEACHER:
+        if teacher_name == teacher['name']:
+            return render(request, './teacher.html', context={'teacher': teacher})
+
+    raise Http404(f'Учителя {teacher_name} нет')

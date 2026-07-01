@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Лагерь Квант{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать на сайт квант</h1>
+<h2>Наши курсы</h2>
+<ul>
+    {% for course_name, _ in courses %}
+    <li><a href="course/{{ course_name }}">{{ course_name }}</a></li>
+    {% empty %}
+    <li>Курсов нет</li>
+    {% endfor %}
+</ul>
+
+<h2>Наши преподаватели</h2>
+<ul>
+    {% for teacher in teachers %}
+    <li><a href="course/{{ teacher.name }}">{{ teacher.name }}, {{ teacher.course }}</a></li>
+    {% empty %}
+    <li>Учителей нет</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
