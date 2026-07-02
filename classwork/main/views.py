@@ -13,7 +13,7 @@ teachers = [
 ]
 
 def main_page(request):
-    return render(request, './base.html', context={"courses": list(courses.items()), "teachers": teachers})
+    return render(request, './index.html', context={"courses": list(courses.items()), "teachers": teachers})
 
 def course_page(request, course_name):
     if course_name not in courses:

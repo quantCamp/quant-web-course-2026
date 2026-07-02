@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}index-title{% endblock %}
+
+{% block content %}
+<body>
+    <h1>Добро пожаловать на сайт Кванта</h1>
+
+    <h2>Наши преподаватели:</h2>
+    <ul>
+        {% for teacher in teachers %}
+            <li><a href="teachers/{{ teacher.link }}">{{ teacher.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Наши курсы:</h2>
+    <ul>
+        {% for course, course_name in courses %}
+            <li><a href="courses/{{ course }}">{{ course_name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock %}
