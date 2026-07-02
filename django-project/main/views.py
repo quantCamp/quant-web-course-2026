@@ -1,46 +1,37 @@
+from django.db.models import Model
 from django.shortcuts import render
 from django.http import Http404
 
 from django.http import HttpResponse
 
-COURSES = {
-    "Python": "Здесь изучаем питон",
-    "plusy": "Здесь изучаем плюсы",
-    "Super_course": "Здесь изучаем что такое супер",
-    "Tatar_language": "учим татарский"
-}
-
-TEACHER = [
-    {
-        'name': 'raushan',
-        'age': 20,
-        'course': 'web'
-    },
-    {
-        'name': 'ishkhan',
-        'age': 20,
-        'course': 'web'
-    }
-]
-
+from main.models import Course, Teacher
 
 def main_page(request):
+
+    courses = Course.objects.all()
+    teachers = Teacher.objects.all()
+
     return render(request, './index.html', context={
-        'courses': list(COURSES.items()),
-        'teachers': TEACHER
+        'courses': courses,
+        'teachers': teachers
     })
 
 
 def course_description(request, course_name):
-    if course_name not in COURSES:
+
+    course = Course.objects.get(name=course_name)
+
+    if course is None:
         raise Http404(f"Курса {course_name} нет")
 
-    return render(request, './course.html', context={"course": {'name': course_name, 'description': COURSES[course_name]}})
+    return render(request, './course.html', context={"course": {'name': course.name,
+                                                                'description': course.description}})
 
 def teacher_description(request, teacher_name):
-    for teacher in TEACHER:
-        if teacher_name == teacher['name']:
-            return render(request, './teacher.html', context={'teacher': teacher})
+
+    teacher = Teacher.objects.get(name=teacher_name)
+    if teacher is not None:
+        return render(request, './teacher.html', context={'teacher': teacher})
 
     raise Http404(f'Учителя {teacher_name} нет')
 

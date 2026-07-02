@@ -6,8 +6,8 @@
 <h1>Добро пожаловать на сайт квант</h1>
 <h2>Наши курсы</h2>
 <ul>
-    {% for course_name, _ in courses %}
-    <li><a href="course/{{ course_name }}">{{ course_name }}</a></li>
+    {% for course in courses %}
+    <li><a href="course/{{ course.name }}">{{ course.name }}</a></li>
     {% empty %}
     <li>Курсов нет</li>
     {% endfor %}
